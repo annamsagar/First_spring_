@@ -1,13 +1,18 @@
 package com.example.demo.service;
 
+import com.example.demo.LaptopRepository;
 import com.example.demo.model.Laptop;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class LaptopService {
-    public void addLaptop()
+
+    @Autowired
+    private LaptopRepository laprepo;
+    public void addLaptop(Laptop lap)
     {
-        System.out.println("method called");
+        laprepo.save(lap);
     }
     public boolean isgood(Laptop laptop)
     {
